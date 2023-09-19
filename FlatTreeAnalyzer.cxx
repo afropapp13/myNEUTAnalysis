@@ -152,6 +152,7 @@ void FlatTreeAnalyzer::Loop() {
 	  if (TMath::Abs(Mode) == 1) { CounterQEEventsPassedSelection++; genie_mode = 1; } // QE
 	  else if (TMath::Abs(Mode) == 2) { CounterMECEventsPassedSelection++; genie_mode = 2; } // MEC
 	  else if (
+		   TMath::Abs(Mode) == 10 ||
 		   TMath::Abs(Mode) == 11 || TMath::Abs(Mode) == 12 || TMath::Abs(Mode) == 13 ||
 		   TMath::Abs(Mode) == 17 || TMath::Abs(Mode) == 22 || TMath::Abs(Mode) == 23
 		   ) { CounterRESEventsPassedSelection++; genie_mode = 3; } // RES
