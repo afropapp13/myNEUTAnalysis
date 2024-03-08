@@ -98,6 +98,7 @@ void FlatTreeAnalyzer::Loop() {
 	  if (cc != 1) { continue; } // make sure that we have only CC interactions		
 
 	  int ProtonTagging = 0, ChargedPionTagging = 0, NeutralPionTagging = 0, MuonTagging = 0;
+          int ElectronTagging = 0, PhotonTagging = 0;
 	  vector <int> ProtonID; ProtonID.clear();
 	  vector <int> MuonID; MuonID.clear();		
 
@@ -134,11 +135,31 @@ void FlatTreeAnalyzer::Loop() {
 
 	    }
 
+	    if (fabs(pdg[i]) == 11)  {
+
+	      ElectronTagging ++;
+
+	    }
+
+	    if (fabs(pdg[i]) == 22)  {
+
+	      PhotonTagging ++;
+
+	    }
+
+
 	  } // End of the loop over the final state particles
 
 	  // If the signal definition is not satisfied, continue
 
-	  if ( ProtonTagging != 1 || ChargedPionTagging != 0 || NeutralPionTagging != 0 || MuonTagging !=1) { continue; }
+	  if (
+ 		ProtonTagging != 1 || 
+		ChargedPionTagging != 0 || 
+		NeutralPionTagging != 0 || 
+		MuonTagging !=1 ||
+		ElectronTagging != 0 ||
+		PhotonTagging != 0 
+	) { continue; }
 
 	  //----------------------------------------//	
 
