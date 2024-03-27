@@ -156,9 +156,7 @@ void FlatTreeAnalyzer::Loop() {
  		ProtonTagging != 1 || 
 		ChargedPionTagging != 0 || 
 		NeutralPionTagging != 0 || 
-		MuonTagging !=1 ||
-		ElectronTagging != 0 ||
-		PhotonTagging != 0 
+		MuonTagging !=1
 	) { continue; }
 
 	  //----------------------------------------//	
