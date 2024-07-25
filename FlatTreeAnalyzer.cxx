@@ -109,7 +109,7 @@ void FlatTreeAnalyzer::Loop() {
 		
 	    double pf = TMath::Sqrt( px[i]*px[i] + py[i]*py[i] + pz[i]*pz[i]);
 
-	    if (pdg[i] == 13 && pf > 0.1) {
+	    if (pdg[i] == 13 && (pf > 0.1 && pf < 1.2) ) {
 
 	      MuonTagging ++;
 	      MuonID.push_back(i);
